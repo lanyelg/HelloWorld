@@ -7,7 +7,9 @@ enable_testing()
 
 set(CMAKE_VERBOSE_MAKEFILE on)
 
-add_executable(HelloWorld HelloWorld.cpp main.cpp)
+file(GLOB HelloWorldSrc "*.cpp")
+
+add_executable(HelloWorld ${HelloWorldSrc})
 
 if(EXISTS runtest.cmake)
     include(runtest.cmake)
